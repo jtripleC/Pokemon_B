@@ -1,0 +1,67 @@
+<!doctype html>
+  <html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GRAFICO DE TRANSACCIONES
+    </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="pokemon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/grafico_de_transacciones.css">
+  </head>
+  <body>
+    <center>
+    <div class="container text-center mx-auto" >
+      <div class="row">
+        
+        <div class="col-8 borde_principal mx-auto">
+          <div class="container">
+            <div class="row text-center">
+              <div class="col">
+                <img src="img/pokemon.jpg" class="img-fluid" title="Pokemon BANK" width="400px">
+              </div>
+              <h3>Juan Antonio Perez</h3>
+              <h6>Cuenta N° 002788543-2</h6>
+              <br>
+
+              <script src="https://code.highcharts.com/highcharts.js"></script>
+              <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+              <script src="https://code.highcharts.com/modules/exporting.js"></script>
+              <script src="https://code.highcharts.com/modules/export-data.js"></script>
+              <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+             
+
+              <figure class="highcharts-figure">
+                <div id="container"></div>
+                <p class="highcharts-description">
+                  Historial de TRANSACCIONES efectuadas por el usuario recientemente
+                </p>
+</figure>
+
+              <h1 style="color:#DC143C">GRAFICO DE TRANSACCIONES</h1>
+            </div>
+            <br>
+            <br>
+            <div class="row row-cols-xs-1 justify-content-center">
+              <div class="col-auto xs-col-10">
+                <form action="" onsubmit="">
+        
+                </form>
+                 
+                <br>
+                <br>
+                <button id="salida" onclick="window.location.href='index.html'" type="submit" class="btn btn-primary">SALIR</button>
+                <button id="regreso" onclick="window.location.href='CONSULTA DE SALDO.html'" type="submit" class="btn btn-primary">ATRAS</button>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </center>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/grafico_de_transacciones.js"></script>
+  </body>
+  </html>

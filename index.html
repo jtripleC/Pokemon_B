@@ -1,0 +1,65 @@
+<!doctype html>
+  <html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokemon BANK</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="pokemon.css" rel="stylesheet">
+    <link rel="stylesheet" href="loader-propio.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+     <!-- Loader -->
+     <div class="loadingF">
+      <div class="loader-wrapper">
+          <div class="loader">
+              <div class="ring"></div>
+              <div class="ring"></div>
+              <div class="ring"></div>
+              <p>Loading...</p>
+          </div>
+      </div> 
+    </div>
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          &nbsp;
+        </div>
+        <div class="col-8 borde_principal">
+          <div class="container">
+            <div class="row text-center">
+              <div class="col">
+                <img src="img/pokemon.jpg" class="img-fluid" title="Pokemon BANK" width="400px">
+              </div>
+            </div>
+            <div class="row row-cols-xs-1 justify-content-center">
+              <div class="col-auto xs-col-10">
+                <form action="" onsubmit="">
+                  <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">PIN</span>
+  <input type="password" class="form-control" placeholder="* * * *" maxlength="4" pattern="[0-9]{4}" title="Error en formato" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+          
+                  <button  onclick="window.location.href='Pantalla de acciones.html'" type="submit" class="btn btn-primary">ACCESO</button>
+                </form>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(window).on("load", function(){
+  $(".loadingF").fadeOut("slow");
+});
+
+  </script>
+  </body>
+  </html>

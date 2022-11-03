@@ -1,0 +1,189 @@
+<!doctype html>
+  <html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DEPOSITO
+    </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="pokemon.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          &nbsp;
+        </div>
+        <div class="col-8 borde_principal">
+          <div class="container">
+            <div class="row text-center">
+              <div class="col">
+                <img src="img/pokemon.jpg" class="img-fluid" title="Pokemon BANK" width="400px">
+              </div>
+              <h3>Juan Antonio Perez</h3>
+              <h6>Cuenta N° 002788543-2</h6>
+              <br>
+              <h1 style="color:#DC143C">DEPOSITO</h1>
+            </div>
+            <br>
+            <br>
+            <div class="row row-cols-xs-1 justify-content-center">
+              <div class="col-auto xs-col-10">
+                <form action="" onsubmit="">
+                  
+                  
+                  <br>
+                  <br>
+                  
+                </form>
+                <h3>Saldo actual: <span id="saldo">0</span></h3>
+                <style>
+                  .hide {display: none;}
+                  form>div {margin-top:20px;}
+                  input[type=text] {text-align:right;}
+                  #error {display: none;color:Red;}
+
+                  #input{
+                    margin: 10px;
+                    width: 90%;
+                    padding: 8px;
+                    border-radius: 20px;
+                    border: 2px solid #FBCD05;
+                  }
+
+                  #enviado{
+                    width: 30%;
+                    background-image: linear-gradient(to right, red , yellow);
+                    transition: all .5s;
+                    padding: 15px;
+                    border-radius: 30px;
+                    text-align: center;
+                  }
+
+                  #enviado:hover{
+                    scale: 1.2;
+                  }
+                  #revisado{
+                   width: 60px;
+                  height: 20px;
+                  position: relative;
+                  -webkit-appearance: none;
+                  background: linear-gradient(0deg, #333, #000);
+                  outline: none;
+                  border-radius: 20px;
+                  transition: .5s;
+                  box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px rgba(0, 0, 0, 1), 0 5px 20px rgba(0, 0, 0, .5), inset 0 0 15px rgba(0, 0, 0, .2) ;
+                  }
+                  #revisado::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 20px;
+                    background: linear-gradient(0deg, #000, #6b6b6b);
+                    border-radius: 20px;
+                    box-shadow: 0 0 0 1px #232323;
+                    transform: scale(.98, .96);
+                    transition: .5s;
+                  }
+                  #revisado:checked{
+                    transition: .5s;
+                    background: linear-gradient(0deg, #6dd1ff, #20b7ff);
+                    box-shadow: 0 0 2px #6dd1ff, 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px rgba(0, 0, 0, 1), 0 5px 20px rgba(0, 0, 0, .5), inset 0 0 15px rgba(0, 0, 0, .2) ;
+                  }
+                  #revisado:checked::before{
+                    left: 20px;
+                  }
+
+                  #revisado2{
+                    width: 20px;
+                    height: 20px;
+                   margin-left: 44px;
+                   border-radius: 50%;
+                  }
+
+
+                </style>
+                
+                <script>
+                  var saldo = 0;
+                  
+                  function showContent(id,e) {
+                    document.getElementById("error").style.display='none';
+                    
+                    if (e.checked) {
+                      document.getElementById(id).style.display='block';
+                    }else{
+                      document.getElementById(id).style.display='none';
+                    }
+                  }
+                  
+                  function deposito() {
+                    document.getElementById("error").style.display='none';
+                    
+                    var valor=parseInt(document.getElementsByName("valor1")[0].value);
+                    if(!isNaN(valor))
+                    {
+                      saldo=saldo+valor;
+                      document.getElementById("saldo").innerHTML=saldo;
+                    }
+                  }
+                  
+                  function retiro() {
+                    document.getElementById("error").style.display='none';
+                    
+                    var valor=parseInt(document.getElementsByName("valor2")[0].value);
+                    if(!isNaN(valor))
+                    {
+                      if(valor<=saldo)
+                      {
+                        saldo=saldo-valor;
+                        document.getElementById("saldo").innerHTML=saldo;
+                      }else{
+                        document.getElementById("error").innerHTML="La cantidad no puede superar el saldo";
+                        document.getElementById("error").style.display='block';
+                      }
+                    }
+                  }
+                  
+                </script>
+                <form>
+                  <div>
+                    <b>Depósito</b><br><br><br>
+                    <input id="revisado" type="checkbox" value="1" onchange="javascript:showContent('deposito',this)" />
+                   <br>
+                    <div id="deposito" class="hide">
+                      Ingresa el Depósito a Realizar <input id="input" type="text" name="valor1"><br>
+                      <br><input id="enviado" type="button" value="Enviar" onclick="deposito()">
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <b>Retiro</b><br><br><br>
+                    <input id="revisado" type="checkbox" value="1" onchange="javascript:showContent('retiro',this)" />
+                    <div id="error"></div>
+                    <br>
+                    <div id="retiro" class="hide">
+                      Ingresa el retiro a Realizar <input id="input" type="text" name="valor2"><br>
+                      <br><input id="enviado" type="button" value="Enviar" onclick="retiro()">
+                    </div>
+                  </div>
+                </form>
+                <br><br>
+                
+                <button id="salida"  onclick="window.location.href='index.html'" type="submit" class="btn btn-primary">SALIR</button>
+                <button id="regreso" onclick="window.location.href='Pantalla de acciones.html'" type="submit" class="btn btn-primary">ATRAS</button>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>

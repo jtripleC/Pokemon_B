@@ -1,0 +1,81 @@
+<!doctype html>
+  <html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PANTALLA DE ACCIONES
+    </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="pokemon.css" rel="stylesheet">
+
+    <style>
+      .btn{
+        margin: 5px 10px;
+        width: 300px;
+        background: #FFCC02;
+        border: 5px solid #3369B2;
+        transition: all .2s;
+      }
+      .btn:hover{
+        background: #3369B2;
+        border: 5px solid #1C2444 ;
+        scale: 1.05;
+      }
+      #salir{
+        background: red;
+        width: 80px;
+        height: 80px;
+        border: 5px solid black;
+        border-radius: 50%;
+      }
+      #salir:hover{
+        scale: .8;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          &nbsp;
+        </div>
+        <div class="col-8 borde_principal">
+          <div class="container">
+            <div class="row text-center">
+              <div class="col">
+                <img src="img/pokemon.jpg" class="img-fluid" title="Pokemon BANK" width="400px">
+              </div>
+              <h3>Juan Antonio Perez</h3>
+              <h6>Cuenta N° 002788543-2</h6>
+            </div>
+            <br>
+            <br>
+            <div class="row row-cols-xs-1 justify-content-center">
+              <div class="col-auto xs-col-10">
+                <form action="" onsubmit="">
+        
+                  
+  
+                </form>
+                <button onclick="window.location.href='Deposito.html'" class="btn btn-primary">DEPOSITAR</button>
+                <button onclick="window.location.href='Retiro.html'" class="btn btn-primary">RETIRAR</button>
+                  <button onclick="window.location.href='CONSULTA DE SALDO.HTML'" class="btn btn-primary">CONSULTAR SALDO</button>
+                  <button onclick="window.location.href='Pago de servicios.html'" class="btn btn-primary">PAGO DE SERVICIOS</button>
+                <br>
+                <br>
+
+                <button id="salir" onclick="window.location.href='index.html'" type="submit" class="btn btn-primary">SALIR</button>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>

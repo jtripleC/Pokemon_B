@@ -1,0 +1,140 @@
+<!doctype html>
+  <html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DEPOSITO
+    </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="pokemon.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          &nbsp;
+        </div>
+        <div class="col-8 borde_principal">
+          <div class="container">
+            <div class="row text-center">
+              <div class="col">
+                <img src="img/pokemon.jpg" class="img-fluid" title="Pokemon BANK" width="400px">
+              </div>
+              <h3>Juan Antonio Perez</h3>
+              <h6>Cuenta N° 002788543-2</h6>
+              <br>
+              <h1 style="color:#DC143C">DEPOSITO</h1>
+            </div>
+            <br>
+            <br>
+            <div class="row row-cols-xs-1 justify-content-center">
+              <div class="col-auto xs-col-10">
+                <form action="" onsubmit="">
+                
+
+
+                </div>
+            <div class="row row-cols-xs-1 justify-content-center">
+              <div class="col-auto xs-col-10">
+                <label for="">Cuenta 1 Saldo:</label>
+                <!--<span class="input-group-text" id="basic-addon1">Saldo</span>-->
+                <input type="text-center" name="Cantidad1" id="C1" value="1200">
+                <label for="">Cuenta 2 Saldo:</label>
+                <input type="text-center" name="Cantidad2" id="C2" value="800">
+                <form action="">
+                  <input type="text-center" name="" id="Cant" placeholder="Cantidad">
+                  <hr>
+                  <input type="button" value="Transferencia de cuenta 1 a 2" class="btn btn-primary" id="bt2" onclick="formula()">
+                  <input type="button" value="Transferencia de cuenta 2 a 1" class="btn btn-primary" id="bt3" onclick="formula2()">
+                  <input type="button" value="Depositar a cuenta 1" class="btn btn-primary"  id="bt4" onclick="formula3()">
+                   <hr>
+                  <input type="button" value="Depositar a cuenta 2" class="btn btn-primary"  id="bt5" onclick="formula4()">
+                  <input type="button" value="Retirar de cuenta 1" class="btn btn-primary"  id="bt6" onclick="formula5()">
+                  <input type="button" value="Retirar de cuenta 2" class="btn btn-primary"  id="bt7" onclick="formula6()">
+                  </form>
+
+                  <!--<input type="button" value="Depósito" class="btn btn-primary" id="" onclick="">
+                  <input type="button" value="Retiro" class="btn btn-primary" id="" onclick="">
+                  <input type="button" value="Consulta de saldo" class="btn btn-primary" id="" onclick="">-->
+                  
+                
+                <script>
+                  function formula() {
+                    var CantidadT=parseInt(document.getElementById('Cant').value);
+                    var Cantidad1=parseInt(document.getElementById('C1').value);
+                    var Cantidad2=parseInt(document.getElementById('C2').value);
+                    document.getElementById('C1').value=(Cantidad1-CantidadT);
+                    document.getElementById('C2').value=(Cantidad2+CantidadT);                  
+                  }
+                </script>
+
+                 <script>
+                  function formula2() {
+                    var CantidadT=parseInt(document.getElementById('Cant').value);
+                    var Cantidad1=parseInt(document.getElementById('C1').value);
+                    var Cantidad2=parseInt(document.getElementById('C2').value);
+                    document.getElementById('C1').value=(Cantidad1+CantidadT);
+                    document.getElementById('C2').value=(Cantidad2-CantidadT);                  
+                  }
+                </script>
+                <script>
+                  function formula3() {
+                    var CantidadT=parseInt(document.getElementById('Cant').value);
+                    var Cantidad1=parseInt(document.getElementById('C1').value);
+                    var Cantidad2=parseInt(document.getElementById('C2').value);
+                    document.getElementById('C1').value=(Cantidad1+CantidadT);
+                             
+                  }
+
+                  function formula4() {
+                    var CantidadT=parseInt(document.getElementById('Cant').value);
+                    var Cantidad1=parseInt(document.getElementById('C1').value);
+                    var Cantidad2=parseInt(document.getElementById('C2').value);
+                    document.getElementById('C2').value=(Cantidad2+CantidadT);
+                             
+                  }
+
+                  function formula5() {
+                    var CantidadT=parseInt(document.getElementById('Cant').value);
+                    var Cantidad1=parseInt(document.getElementById('C1').value);
+                    var Cantidad2=parseInt(document.getElementById('C2').value);
+                    document.getElementById('C1').value=(Cantidad1-CantidadT);
+                             
+                  }
+
+                  function formula6() {
+                    var CantidadT=parseInt(document.getElementById('Cant').value);
+                    var Cantidad1=parseInt(document.getElementById('C1').value);
+                    var Cantidad2=parseInt(document.getElementById('C2').value);
+                    document.getElementById('C2').value=(Cantidad2-CantidadT);
+                             
+                  }
+
+                </script>  
+
+
+                <p>&nbsp;</p>
+                <!--<button  onclick="window.location.href='index.html'" type="submit" class="btn btn-primary">Salir</button>-->
+                
+                  
+              
+                  
+                  <br>
+                  <br>
+                  
+                </form>
+                <button id="salida"  onclick="window.location.href='index.html'" type="submit" class="btn btn-primary">SALIR</button>
+                <button id="regreso" onclick="window.location.href='Pantalla de acciones.html'" type="submit" class="btn btn-primary">ATRAS</button>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>

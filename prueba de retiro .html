@@ -1,0 +1,127 @@
+<!doctype html>
+  <html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DEPOSITO 2</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="pokemon.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          &nbsp;
+        </div>
+        <div class="col-8 borde_principal">
+          <div class="container">
+            <div class="row text-center">
+              <div class="col">
+                <img src="img/pokemon.jpg" class="img-fluid" title="Pokemon BANK" width="400px">
+              </div>
+              <h4>Rene de Alfredo</h4>
+              <h4>Cuenta N° 030292838383-2</h4>
+              <p>&nbsp;</p>
+            
+  
+
+
+</div>
+            <div class="row row-cols-xs-1 justify-content-center">
+              <div class="col-auto xs-col-10">
+
+                <style>
+  .hide {display: none;}
+  form>div {margin-top:20px;}
+  input[type=text] {text-align:right;}
+  #error {display: none;color:Red;}
+  </style>
+                
+  <script>
+  var saldo = 0;
+ 
+  function showContent(id,e) {
+    document.getElementById("error").style.display='none';
+ 
+    if (e.checked) {
+      document.getElementById(id).style.display='block';
+    }else{
+      document.getElementById(id).style.display='none';
+    }
+  }
+ 
+  function deposito() {
+    document.getElementById("error").style.display='none';
+ 
+    var valor=parseInt(document.getElementsByName("valor1")[0].value);
+    if(!isNaN(valor))
+    {
+      saldo=saldo+valor;
+      document.getElementById("saldo").innerHTML=saldo;
+    }
+  }
+ 
+  function retiro() {
+    document.getElementById("error").style.display='none';
+ 
+    var valor=parseInt(document.getElementsByName("valor2")[0].value);
+    if(!isNaN(valor))
+    {
+      if(valor<=saldo)
+      {
+        saldo=saldo-valor;
+        document.getElementById("saldo").innerHTML=saldo;
+      }else{
+        document.getElementById("error").innerHTML="La cantidad no puede superar el saldo";
+        document.getElementById("error").style.display='block';
+      }
+    }
+  }
+ 
+  </script>
+ 
+</head>
+ 
+<body>
+  <h3>Saldo actual: <span id="saldo">0</span></h3>
+ 
+  <form>
+    <div>
+      <b>Depósito</b>
+      <input type="checkbox" value="1" onchange="javascript:showContent('deposito',this)" />
+      <div id="deposito" class="hide">
+        Ingresa el Depósito a Realisar <input type="text" name="valor1">
+        <br><input type="button" value="Enviar" onclick="deposito()">
+      </div>
+    </div>
+ 
+    <div>
+      <b>Retiro</b>
+      <input type="checkbox" value="1" onchange="javascript:showContent('retiro',this)" />
+      <div id="error"></div>
+      <div id="retiro" class="hide">
+        Ingresa el retiro a Realisar <input type="text" name="valor2">
+        <br><input type="button" value="Enviar" onclick="retiro()">
+      </div>
+    </div>
+  </form>
+ 
+
+
+                <p>&nbsp;</p>
+                <button id="salida" onclick="window.location.href='index.html'" type="submit" class="btn btn-primary">Salir</button>
+                
+                  
+                  <p>&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            &nbsp;
+          </div>
+        </div>
+      </div>
+      <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>

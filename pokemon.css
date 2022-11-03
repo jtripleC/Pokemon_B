@@ -1,0 +1,46 @@
+.borde_principal{
+	border: 5px solid #85c1e9;
+	border-radius: 25px;
+	margin-top: 25px;
+	background: #fff;
+}
+body{
+	position: relative;
+
+}
+body::before{
+	position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url('img/fondo.png');
+	background-size: cover;
+    opacity: .1;
+    content: "";
+    z-index: -1;
+	height: 100vh;
+}
+#salida{
+    background:red;
+    border: 3px solid #000;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    transition: .2s;
+
+}
+#salida:hover{
+    scale: .8;
+}
+
+#regreso{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    transition: .2s;
+}
+#regreso:hover{
+    scale: .8;
+}
