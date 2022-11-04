@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/sweetalert2.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button"
+        data-toggle="collapse" data-target="#navbar8">
+        <p class="navbar-brand text-primary mb-0">
+          <i class="fa d-inline fa-lg fa-stop-circle"></i> BRAND
+        </p>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar8">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="#">Atrás</a> </li>
+        </ul>
+        <p class="text-primary d-none d-md-block lead mb-0">Pokemón Bank</p>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5 h-100 d-flex justify-content-around align-items-stretch">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1 mt-2">
+          <h3 class="display-4">Retiros de efectivo</h3>
+          <h2 class="text-center">Tu disponible es: $<span id="montoTotal"></span></h2>
+          <p class="lead">Introduce la cantidad que deseas retirar</p>
+          <form>
+            <div class="form-group"> <input type="number" class="form-control form-control-lg" id="monto_retiro"
+                required="required" placeholder="Monto a retirar">
+              <small class="form-text text-muted text-right"></small>
+            </div>
+          </form>
+          <strong class="w-100 text-muted d-block text-center lead break p-2" contenteditable="true">Opciones
+            rápidas</strong>
+          <div class="row m-2">
+            <div class="col-md-3"><a class="btn btn-light btn-block btn-lg" onclick="monto(10);">10</a></div>
+            <div class="col-md-3"><a class="btn btn-light btn-block btn-lg" onclick="monto(20);">20</a></div>
+            <div class="col-md-3"><a class="btn btn-light btn-block btn-lg" onclick="monto(40);">40</a></div>
+            <div class="col-md-3"><a class="btn btn-light btn-block btn-lg" onclick="monto(80);">80</a></div>
+          </div><button type="submit" class="btn btn-primary btn-lg btn-block mt-3">Procesar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/sweetalert.js"></script>
+  <script src="../js/functions.js"></script>
+  <script src="../js/atm.js"></script>
+  <script src="../js/retiros.js"></script>
+</body>
+
+</html>
